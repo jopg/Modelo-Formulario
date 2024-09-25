@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Formulario</title>
+      <style>
+         * {
+            padding: 0;
+            margin: 0;
+            font-size: 1em;
+            font-family: "Roboto";
+         }
+
+         body {
+            background-color: rgb(4, 131, 0);
+         }
+
+         .container {
+            max-width: 450px;
+            height: auto; /*Opcional, por defecto es auto*/
+            background-color: #efefef;
+            margin: 5% auto;
+            padding-bottom: 1rem;
+            border-radius: 30px;
+            transition: all 0.5s;
+            border-top: solid 0.5rem #f39b53;
+         }
+
+         .container:focus-within {
+            border-top: solid 0.5rem rgb(207, 133, 72);
+         }
+
+         .form_top {
+            width: 100%;
+            text-align: center;
+            padding: 2rem 0 1rem;
+            margin-bottom: 1rem;
+            /*La razon de por que el borde radius se corre hacia abajo es por que el valor del border
+            radius es mucho mayor que el ancho del border-top
+            
+            border top aplica un ancho de borde de 1rem, pero border radius especifica un redondeo 
+            de 50px, mucho mayor que 1rem, por lo que el borde se deforma para que los bordes-top radius
+            tengan un redondeo de 60px
+            
+            */
+         }
+
+         .form_top h2 {
+            font-weight: bold;
+            color: #858585;
+            font-size: 18px;
+         }
+
+         h2 span {
+            color: #f39b53;
+         }
+
+         .form_reg {
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+         }
+
+         .btn_form {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+         }
+
+         .input,
+         .btn_submit,
+         .btn_reset {
+            background-color: #efefef;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-bottom: solid #c8c8c8 0.2rem;
+            transition: all 0.5s;
+         }
+
+         .input:focus {
+            border-bottom: solid #f39b53 0.2rem;
+         }
+
+         .btn_submit,
+         .btn_reset {
+            width: 40%;
+            border-bottom: none;
+            background-color: #31b1e5;
+            color: white;
+            border-radius: 10px;
+         }
+
+         .btn_reset {
+            background-color: #eda135;
+         }
+
+         .btn_submit:hover {
+            background-color: #4c9ed9;
+         }
+
+         .btn_reset:hover {
+            background-color: #fa9535;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="form_top">
+            <h2>Formulario <span>Registro</span></h2>
+         </div>
+         <form action="" class="form_reg">
+            <input
+               type="text"
+               class="input"
+               placeholder="Nombre"
+               required
+               autofocus
+            />
+            <input type="email" class="input" placeholder="Email" required />
+            <input type="tel" class="input" placeholder="Teléfono" required />
+            <input type="text" class="input" placeholder="Dirección" required />
+
+            <div class="btn_form">
+               <input type="submit" class="btn_submit" value="REGISTRAR" />
+               <input type="reset" class="btn_reset" value="LIMPIAR" />
+            </div>
+         </form>
+      </div>
+   </body>
+</html>
